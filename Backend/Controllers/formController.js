@@ -2,7 +2,7 @@ const Form = require("../Models/Form");
 const sendMail = require("../Services/mailService");
 
 exports.handleForm = async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, phone, email, message } = req.body;
   console.log("Request body:", req.body);
 
   if (!name || !email || !phone || !message) {
@@ -11,7 +11,7 @@ exports.handleForm = async (req, res) => {
 
   try {
    
-    const newForm = new Form({ name, email, phone, message });
+    const newForm = new Form({ name,phone,email, message });
     await newForm.save();
 
     await sendMail(name, email, message,phone);
