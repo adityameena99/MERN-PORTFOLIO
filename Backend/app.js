@@ -8,23 +8,31 @@ const formRouter = require("./Routers/Router");
 
 const app = express();
 
-
+// JSON parsing
 app.use(express.json());
+
+// CORS – must be above routes
 app.use(cors({
-  origin: [
-    "https://myportfolio-jet-sigma.vercel.app", 
-   "http://localhost:3000"
-  ],
-  credentials: true,
+  origin: "https://myportfolio-jet-sigma.vercel.app", // ✅ include https://
+  methods: ["GET", "POST", "OPTIONS"],
+  credentials: true
 }));
 
-
+// Routes
 app.use("/api", formRouter);
 
+// MongoDB connection + server start
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ Connected to MongoDB");
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log(" Connected to MongoDB"))
-  .catch(err => console.error(" Error connecting to MongoDB!", err));
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+    setTimeout(connectDB, 5000);
+  }
+};
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
+connectDB();
