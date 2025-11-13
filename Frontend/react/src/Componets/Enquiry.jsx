@@ -19,7 +19,7 @@ const Enquiry = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://mern-portfolio-1-il6y.onrender.com/api/contact", {
+      const res = await fetch("https://mern-portfolio-3-gw14.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
