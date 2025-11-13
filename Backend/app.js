@@ -13,7 +13,7 @@ app.use(express.json());
 
 // CORS – must be above routes
 app.use(cors({
-  origin: "https://myportfolio-jet-sigma.vercel.app", // ✅ include https://
+  origin: "https://mern-portfolio-khaki.vercel.app", // ✅ include https://
   methods: ["GET", "POST", "OPTIONS"],
   credentials: true
 }));
