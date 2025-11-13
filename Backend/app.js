@@ -19,7 +19,7 @@ app.use(cors({
 }));
 
 // Routes
-app.use("/api/contact", formRouter);
+app.use("/api", formRouter);
 
 // MongoDB connection + server start
 const connectDB = async () => {
