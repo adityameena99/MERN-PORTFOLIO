@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://my-portfolio-899.vercel.app", 
+  origin: "https://mern-portfolio-d64a.vercel.app", 
   credentials: true,
 }));
 
