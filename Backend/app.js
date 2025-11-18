@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://my-portfolio-777-nu.vercel.app", 
+  origin: "https://my-portfolio-7777.vercel.app", 
   credentials: true,
 }));
 
