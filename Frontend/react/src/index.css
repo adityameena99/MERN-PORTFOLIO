@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'a1';
+    src: url(./Fonts/Font.ttf);
+}
+@font-face {
+    font-family: 'a2';
+    src: url(./Fonts/65ddd7e2cc3145a8d1648103_Athletics-Regular.ttf);
+}
+@font-face {
+  font-family: 'a3';
+  src: url(./Fonts/SofiaSansCondensed-Bold.aaede6389f871aa6d438.ttf);
+}
+
+@font-face {
+  font-family: 'a4';
+  src: url(./Fonts/SofiaSansCondensed-SemiBold.5dd1068d7811d649e8bd.ttf);
+}
+
+@font-face {
+  font-family: 'a5';
+  src: url(./Fonts/SplineSansMono-Light.3da0fba3453a62aa562a.ttf);
+}
+@font-face {
+  font-family: 'a6';
+  src: url(./Fonts/SplineSansMono-Regular.847e21281e9bbe6cda7b.ttf);
+}
+
+
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F7F7F7;
+  z-index: -1;
+}
+
+.cards-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  transform: translate3d(0, 0, 0);
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(113, 24, 24, 0.85);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
